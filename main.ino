@@ -47,7 +47,7 @@ long read_keyboard_value()
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);
   distance = (duration/2) / 29.1;
-  distance = constrain(distance,0,KEY_START + KEY_END);
+  distance = constrain(distance,0,KEY_START + KEY_END); //The length of the keyboard is 36cm, but I made 0-4 and 32-36 a silent zone.
   
   return distance;
   }
